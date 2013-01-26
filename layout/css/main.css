@@ -171,6 +171,9 @@ header {
     -webkit-box-shadow: 0 2px 3px 0 #818181;
     box-shadow: 0 2px 3px 0 #818181
 }
+header .inner {
+    text-align: center
+}
 header form {
     margin: 0;
     float: left;
@@ -215,8 +218,64 @@ header form .input-append input.btn.search-submit {
 header form .input-append input.search-text:focus + input.btn.search-submit {
     background-position: 50% -28px
 }
-
-
+header nav.social {
+    float: right;
+}
+header nav.social ul {
+    margin: 0
+}
+header nav.social ul li {
+    float: left;
+    margin: 0 0 0 23px
+}
+header nav.social ul li a {
+    display: block;
+    width: 28px;
+    height: 28px;
+    background: url('../img/social-icons.png') no-repeat;
+    opacity: 0.7;
+}
+header nav.social ul li a.twitter-icon {
+    background-position: 0 -28px
+}
+header nav.social ul li a.rss-icon {
+    background-position: 0 -56px
+}
+header nav.social ul li a.vk-icon {
+    background-position: 0 -84px
+}
+header nav.social ul li a.google-icon {
+    background-position: 0 -112px
+}
+header nav.social ul li a:hover {
+    opacity: 1;
+    text-decoration: none
+}
+header nav.main-nav {
+    display: inline-block;
+}
+header nav.main-nav ul li {
+    float: left;
+    padding: 0 0 0 15px;
+    background: url('../img/main-menu-delimiter.gif') 7px 50% no-repeat
+}
+header nav.main-nav ul li:first-child {
+    padding: 0;
+    background: none
+}
+header nav.main-nav ul li a {
+    display: block;
+    padding: 0 14px;
+    font: 900 14px/30px 'SegoeUI', Arial, Helvetica, Garuda, sans-serif;
+    color: #f6f6f6;
+    text-transform: uppercase
+}
+header nav.main-nav ul li a:hover,
+header nav.main-nav ul li.active a {
+    background: #81c9bd;
+    color: #fff;
+    text-decoration: none
+}
 
 
 
