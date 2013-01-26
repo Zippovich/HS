@@ -93,10 +93,128 @@ textarea {
    Author's custom styles
    ========================================================================== */
 
+/* ----- Font@face ----- */
+@font-face {
+    font-family: 'SegoeUI';
+    src: url('../fonts/segoeui.eot');
+    src: url('../fonts/segoeui.eot?#iefix') format('embedded-opentype'),
+         url('../fonts/segoeui.woff') format('woff'),
+         url('../fonts/segoeui.ttf') format('truetype'),
+         url('../fonts/segoeui.svg#segoeui') format('svg');
+    font-weight: 400;
+    font-style: normal;
+}
+@font-face {
+    font-family: 'SegoeUI';
+    src: url('../fonts/segoeuib.eot');
+    src: url('../fonts/segoeuib.eot?#iefix') format('embedded-opentype'),
+         url('../fonts/segoeuib.woff') format('woff'),
+         url('../fonts/segoeuib.ttf') format('truetype'),
+         url('../fonts/segoeuib.svg#segoeuib') format('svg');
+    font-weight: 900;
+    font-style: normal;
+}
+@font-face {
+    font-family: 'SegoeUI';
+    src: url('../fonts/segoeuii.eot');
+    src: url('../fonts/segoeuii.eot?#iefix') format('embedded-opentype'),
+         url('../fonts/segoeuii.woff') format('woff'),
+         url('../fonts/segoeuii.ttf') format('truetype'),
+         url('../fonts/segoeuii.svg#segoeuii') format('svg');
+    font-weight: 400;
+    font-style: italic;
+}
+@font-face {
+    font-family: 'SegoeUI';
+    src: url('../fonts/segoeuiz.eot');
+    src: url('../fonts/segoeuiz.eot?#iefix') format('embedded-opentype'),
+         url('../fonts/segoeuiz.woff') format('woff'),
+         url('../fonts/segoeuiz.ttf') format('truetype'),
+         url('../fonts/segoeuiz.svg#segoeuiz') format('svg');
+    font-weight: 900;
+    font-style: italic;
+}
+@font-face {
+    font-family: 'SegoeUI';
+    src: url('../fonts/seguisb.eot');
+    src: url('../fonts/seguisb.eot?#iefix') format('embedded-opentype'),
+         url('../fonts/seguisb.woff') format('woff'),
+         url('../fonts/seguisb.ttf') format('truetype'),
+         url('../fonts/seguisb.svg#segoeuiz') format('svg');
+    font-weight: 700;
+    font-style: normal;
+}
+@font-face {
+    font-family: 'SegoeUI';
+    src: url('../fonts/segoeuil.eot');
+    src: url('../fonts/segoeuil.eot?#iefix') format('embedded-opentype'),
+         url('../fonts/segoeuil.woff') format('woff'),
+         url('../fonts/segoeuil.ttf') format('truetype'),
+         url('../fonts/segoeuil.svg#segoeuiz') format('svg');
+    font-weight: 700;
+    font-style: normal;
+}
+/* ----- Common ----- */
+body {
+    background: url('../img/body-pattern.png');
+    font: 13px/18px Arial, Helvetica, Garuda, sans-serif
+}
+.inner {
+    max-width: 1297px;
+    margin: auto
+}
 
-
-
-
+/* ----- Header ----- */
+header {
+    padding: 16px 0 14px;
+    background: #434343;
+    -webkit-box-shadow: 0 2px 3px 0 #818181;
+    box-shadow: 0 2px 3px 0 #818181
+}
+header form {
+    margin: 0;
+    float: left;
+    width: 206px
+}
+header form .input-append {
+    position: relative;
+    margin-bottom: 0
+}
+header form .input-append input.search-text {
+    font: 14px 'SegoeUI', Arial, Helvetica, Garuda, sans-serif;
+    width: 160px;
+    -webkit-border-radius: 0;
+    -moz-border-radius: 0;
+    border-radius: 0;
+    border-right: none;
+    -webkit-box-shadow: none;
+    -moz-box-shadow: none;
+    box-shadow: none;
+    padding-right: 40px
+}
+header form .input-append input.search-text:focus {
+    -webkit-box-shadow: 0 0 1px 1px #81c9bd;
+    -moz-box-shadow: 0 0 1px 1px #81c9bd;
+    box-shadow: 0 0 1px 1px #81c9bd;
+}
+header form .input-append input.btn.search-submit {
+    -webkit-border-radius: 0;
+    -moz-border-radius: 0;
+    border-radius: 0;
+    border: none;
+    -webkit-box-shadow: none;
+    -moz-box-shadow: none;
+    box-shadow: none;
+    background: #fff url('../img/search-buttons.png') 50% 0 no-repeat;
+    position: absolute;
+    top: 1px;
+    right: 1px;
+    z-index: 2000;
+    height: 28px
+}
+header form .input-append input.search-text:focus + input.btn.search-submit {
+    background-position: 50% -28px
+}
 
 
 
