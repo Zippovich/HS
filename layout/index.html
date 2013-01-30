@@ -13,6 +13,7 @@
         <link rel="stylesheet" href="css/normalize.css">
         <link rel="stylesheet" href="css/bootstrap.min.css">
         <link rel="stylesheet" href="css/bootstrap-responsive.min.css">
+        <link rel="stylesheet" href="css/elastislide.css">
         <link rel="stylesheet" href="css/main.css">
         <script src="js/vendor/modernizr-2.6.2.min.js"></script>
     </head>
@@ -32,11 +33,36 @@
                 </select>
                 <nav class="main-nav">
                     <ul class="clearfix">
-                        <li class="active"><a href="#">Главная</a></li>
-                        <li><a href="#">Категории</a></li>
-                        <li><a href="#">Новости</a></li>
-                        <li><a href="#">Помощь</a></li>
-                        <li><a href="#">О проекте</a></li>
+                        <li class="active">
+                            <a href="#">
+                                <span class="not-hover">Главная</span>
+                                <span class="hover">Главная</span>
+                            </a>
+                        </li>
+                        <li>
+                            <a href="#">
+                                <span class="not-hover">Категории</span>
+                                <span class="hover">Категории</span>
+                            </a>
+                        </li>
+                        <li>
+                            <a href="#">
+                                <span class="not-hover">Новости</span>
+                                <span class="hover">Новости</span>
+                            </a>
+                        </li>
+                        <li>
+                            <a href="#">
+                                <span class="not-hover">Помощь</span>
+                                <span class="hover">Помощь</span>
+                            </a>
+                        </li>
+                        <li>
+                            <a href="#">
+                                <span class="not-hover">О проекте</span>
+                                <span class="hover">О проекте</span>
+                            </a>
+                        </li>
                     </ul>
                 </nav>
                 <form id="search" action="#" method="get">
@@ -367,6 +393,82 @@
                 <!-- Топ просмотров -->
                 <article class="top-views">
                     <h2><a href="#">Топ просмотров</a></h2>
+                    <ul id="carousel" class="elastislide-list"><li>
+                            <a href="#">
+                                <img src="img/ex4.jpg" alt="" />
+                                <span class="play"></span>
+                            </a>
+                        </li><li>
+                            <a href="#">
+                                <img src="img/ex4.jpg" alt="" />
+                                <span class="play"></span>
+                            </a>
+                        </li><li>
+                            <a href="#">
+                                <img src="img/ex4.jpg" alt="" />
+                                <span class="play"></span>
+                            </a>
+                        </li><li>
+                            <a href="#">
+                                <img src="img/ex4.jpg" alt="" />
+                                <span class="play"></span>
+                            </a>
+                        </li><li>
+                            <a href="#">
+                                <img src="img/ex4.jpg" alt="" />
+                                <span class="play"></span>
+                            </a>
+                        </li><li>
+                            <a href="#">
+                                <img src="img/ex4.jpg" alt="" />
+                                <span class="play"></span>
+                            </a>
+                        </li><li>
+                            <a href="#">
+                                <img src="img/ex4.jpg" alt="" />
+                                <span class="play"></span>
+                            </a>
+                        </li><li>
+                            <a href="#">
+                                <img src="img/ex4.jpg" alt="" />
+                                <span class="play"></span>
+                            </a>
+                        </li><li>
+                            <a href="#">
+                                <img src="img/ex4.jpg" alt="" />
+                                <span class="play"></span>
+                            </a>
+                        </li><li>
+                            <a href="#">
+                                <img src="img/ex4.jpg" alt="" />
+                                <span class="play"></span>
+                            </a>
+                        </li><li>
+                            <a href="#">
+                                <img src="img/ex4.jpg" alt="" />
+                                <span class="play"></span>
+                            </a>
+                        </li><li>
+                            <a href="#">
+                                <img src="img/ex4.jpg" alt="" />
+                                <span class="play"></span>
+                            </a>
+                        </li><li>
+                            <a href="#">
+                                <img src="img/ex4.jpg" alt="" />
+                                <span class="play"></span>
+                            </a>
+                        </li><li>
+                            <a href="#">
+                                <img src="img/ex4.jpg" alt="" />
+                                <span class="play"></span>
+                            </a>
+                        </li><li>
+                            <a href="#">
+                                <img src="img/ex4.jpg" alt="" />
+                                <span class="play"></span>
+                            </a>
+                        </li></ul>
                 </article>
                 <!-- /Топ просмотров -->
                 <!-- Самое ожидаемое -->
@@ -459,9 +561,24 @@
                 </select>
                 <nav class="footer-nav clearfix">
                     <ul>
-                        <li><a href="#">Условия использования</a></li>
-                        <li><a href="#">Авторские права</a></li>
-                        <li><a href="#">Контакты</a></li>
+                        <li>
+                            <a href="#">
+                                <span class="not-hover">Условия использования</span>
+                                <span class="hover">Условия использования</span>
+                            </a>
+                        </li>
+                        <li>
+                            <a href="#">
+                                <span class="not-hover">Авторские права</span>
+                                <span class="hover">Авторские права</span>
+                            </a>
+                        </li>
+                        <li>
+                            <a href="#">
+                                <span class="not-hover">Контакты</span>
+                                <span class="hover">Контакты</span>
+                            </a>
+                        </li>
                     </ul>
                 </nav>
                 <a href="#" class="login-register-link">Вход/Регистрация</a>
@@ -471,8 +588,10 @@
 
         <!--script src="//ajax.googleapis.com/ajax/libs/jquery/1.9.0/jquery.min.js"></script-->
         <script>window.jQuery || document.write('<script src="js/vendor/jquery-1.9.0.min.js"><\/script>')</script>
-        <script src="js/plugins.js"></script>
+        <script src="js/vendor/jquerypp.custom.js"></script>
         <script src="js/vendor/bootstrap.min.js"></script>
+        <script src="js/jquery.elastislide.js"></script>
+        <script src="js/plugins.js"></script>
         <script src="js/main.js"></script>
 
         <!-- Google Analytics: change UA-XXXXX-X to be your site's ID. -->

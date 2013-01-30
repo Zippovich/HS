@@ -167,7 +167,8 @@ textarea {
 /* ----- Common ----- */
 body {
     background: url('../img/body-pattern.png');
-    font: 13px/18px Arial, Helvetica, Garuda, sans-serif
+    font: 13px/18px Arial, Helvetica, Garuda, sans-serif;
+    color: #888
 }
 .inner {
     max-width: 1297px;
@@ -186,6 +187,12 @@ h2 a:hover {
 }
 .center {
     text-align: center
+}
+a {
+    -webkit-transition: all 0.2s ease-out;
+    -moz-transition: all 0.2s ease-out;
+    -o-transition: all 0.2s ease-out;
+    transition: all 0.2s ease-out;
 }
 
 /* ----- Header ----- */
@@ -292,16 +299,34 @@ header nav.main-nav ul li:first-child {
 }
 header nav.main-nav ul li a {
     display: block;
-    padding: 0 14px;
     font: 900 14px/30px 'SegoeUI', Arial, Helvetica, Garuda, sans-serif;
+    text-transform: uppercase;
+    height: 30px;
+    overflow: hidden
+}
+header nav.main-nav ul li a span {
+    display: block;
+    padding: 0 14px;
+    position: relative
+}
+header nav.main-nav ul li a span.not-hover {
     color: #f6f6f6;
-    text-transform: uppercase
+}
+header nav.main-nav ul li a span.hover {
+    background: #81c9bd;
+    color: #fff;
+    opacity: 0
 }
 header nav.main-nav ul li a:hover,
 header nav.main-nav ul li.active a {
-    background: #81c9bd;
-    color: #fff;
     text-decoration: none
+}
+header nav.main-nav ul li.active a span {
+    text-decoration: none;
+    top: -30px
+}
+header nav.main-nav ul li.active a span.hover {
+    opacity: 1
 }
 header .small-main-nav {
     width: 100%;
@@ -325,7 +350,7 @@ article.new > .center > ul > li a {
     position: relative
 }
 article.new > .center > ul > li a span.letter {
-    display: block;
+    opacity: 1;
     position: absolute;
     top: 0;
     left: 0;
@@ -334,10 +359,14 @@ article.new > .center > ul > li a span.letter {
     opacity: 0.7;
     font: 90px/178px 'Prosto', Arial, Helvetica, Garuda, sans-serif;
     color: #fff;
-    text-align: center
+    text-align: center;
+    -webkit-transition: all 0.2s ease-out;
+    -moz-transition: all 0.2s ease-out;
+    -o-transition: all 0.2s ease-out;
+    transition: all 0.2s ease-out;
 }
 article.new > .center > ul > li a:hover span.letter {
-    display: none
+    opacity: 0
 }
 article.new > .center > ul > li a .color-image {
     position: absolute;
@@ -356,10 +385,14 @@ a span.play {
     height: 50px;
     margin: -25px 0 0 -25px;
     background: url('../img/play-icon.png') no-repeat;
-    display: none
+    opacity: 0;
+    -webkit-transition: all 0.2s ease-out;
+    -moz-transition: all 0.2s ease-out;
+    -o-transition: all 0.2s ease-out;
+    transition: all 0.2s ease-out;
 }
 a:hover span.play {
-    display: block
+    opacity: 1
 }
 /* ----- Popover ----- */
 article.new ul li .popover {
@@ -449,7 +482,7 @@ article.new ul li .popover .popover-content {
 }
 .soon > .center > ul > li {
     float: left;
-    padding: 0 5px 10px;
+    padding: 0 4px 10px;
 }
 .soon > .center > ul > li > a {
     display: block;
@@ -526,17 +559,37 @@ footer nav.footer-nav ul li:first-child {
 }
 footer nav.footer-nav ul li a {
     display: block;
-    padding: 0 14px;
     font: 900 14px/30px 'SegoeUI', Arial, Helvetica, Garuda, sans-serif;
     color: #f6f6f6;
-    text-transform: uppercase
+    text-transform: uppercase;
+    height: 30px;
+    overflow: hidden
+}
+footer nav.footer-nav ul li a span {
+    display: block;
+    padding: 0 14px;
+    position: relative
+}
+footer nav.footer-nav ul li a span.not-hover {
+    color: #f6f6f6;
+}
+footer nav.footer-nav ul li a span.hover {
+    background: #81c9bd;
+    color: #fff;
+    opacity: 0
 }
 footer nav.footer-nav ul li a:hover,
 footer nav.footer-nav ul li.active a {
-    background: #81c9bd;
-    color: #fff;
     text-decoration: none
 }
+footer nav.footer-nav ul li.active a span {
+    text-decoration: none;
+    top: -30px
+}
+footer nav.footer-nav ul li.active a span.hover {
+    opacity: 1
+}
+
 footer .small-footer-nav {
     width: 100%;
     display: none
@@ -642,6 +695,57 @@ footer .copyright {
     background: #81c9bd;
     color: #fff;
     text-decoration: none
+}
+
+/* Фильм */
+.film {
+    padding: 20px 0
+}
+.film .title {
+    width: 33%;
+    border-bottom: 2px solid #dadada
+}
+.film .title h1 {
+    float: left;
+    font: 16px/30px 'SegoeUI', Arial, Helvetica, Garuda, sans-serif;
+    color: #5f5f5f;
+    border-bottom: 2px solid #81c9bd;
+    margin: 0 0 -2px
+}
+.film .title .ft-right {
+    float: right;
+    font-size: 10px;
+    color: #888;
+    margin: 4px 0
+}
+.film .title .ft-right .pp-rating > span {
+    float: left
+}
+.film .title .ft-right .pp-rating .stars {
+    float: right
+}
+.film .main-content {
+    
+}
+.film .main-content .content {
+    float: left;
+    width: 33%;
+    padding: 12px 0 0
+}
+.film .main-content .content .likes {
+    margin: 46px 0 0;
+    list-style: none
+}
+.film .main-content .content .likes li {
+    float: left;
+    margin: 0 5% 0 0
+}
+.film .main-content .video-container {
+    float: right;
+    width: 66%
+}
+.film .main-content .video-container img {
+    width: 100%
 }
 
 /* MEDIA Tablet */

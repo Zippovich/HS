@@ -60,7 +60,7 @@ $(function() {
         }
         if (forHide)
             $($lis[forHide]).hide();
-        $ul.find('.bs-descr').show();
+        $ul.find('.bs-descr').stop().show(100);
     }, function(e) {
         var $ul = $(this).parents('ul'),
             $lis = $ul.find('> li'),
@@ -71,13 +71,42 @@ $(function() {
                 break;
             }
         }
-        if (forShow) 
-            $($lis[forShow]).show();
-        $ul.find('.bs-descr').hide();
+        $ul.find('.bs-descr').stop().hide(100, function() {
+            if (forShow) 
+                $($lis[forShow]).show();
+        });
     });
     
     $(window).resize(function() {
         chgDesc();
     });
     chgDesc();
+    
+    // Menu hover
+    $('header nav.main-nav ul li a, footer nav.footer-nav ul li a').hover(function() {
+        var $self = $(this);
+        if (!$self.parent().hasClass('active')) {
+            $self.find('.not-hover').animate({
+                top: -30
+            }, 200);
+            $self.find('.hover').animate({
+                top: -30,
+                opacity: 1
+            }, 200);
+        }
+    }, function() {
+        var $self = $(this);
+        if (!$self.parent().hasClass('active')) {
+            $self.find('.not-hover').stop().animate({
+                top: 0
+            }, 200);
+            $self.find('.hover').stop().animate({
+                top: 0,
+                opacity: 0
+            }, 200);
+        }
+    });
+    
+    // Home Slider
+    $('#carousel').elastislide();
 });
