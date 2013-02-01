@@ -13,6 +13,7 @@
         <link rel="stylesheet" href="css/normalize.css">
         <link rel="stylesheet" href="css/bootstrap.min.css">
         <link rel="stylesheet" href="css/bootstrap-responsive.min.css">
+        <link rel="stylesheet" href="css/jquery.jscrollpane.css">
         <link rel="stylesheet" href="css/main.css">
         <script src="js/vendor/modernizr-2.6.2.min.js"></script>
     </head>
@@ -21,104 +22,361 @@
             <p class="chromeframe">You are using an <strong>outdated</strong> browser. Please <a href="http://browsehappy.com/">upgrade your browser</a> or <a href="http://www.google.com/chromeframe/?redirect=true">activate Google Chrome Frame</a> to improve your experience.</p>
         <![endif]-->
         
-        <header>
-            <div class="inner clearfix">
-                <select class="small-main-nav">
-                    <option value="#">Главная</option>
-                    <option value="#">Категории</option>
-                    <option selected="selected" value="#">Новости</option>
-                    <option value="#">Помощь</option>
-                    <option value="#">О проекте</option>
-                </select>
-                <nav class="main-nav">
-                    <ul class="clearfix">
-                        <li>
-                            <a href="#">
-                                <span class="not-hover">Главная</span>
-                                <span class="hover">Главная</span>
-                            </a>
-                        </li>
-                        <li>
-                            <a href="#">
-                                <span class="not-hover">Категории</span>
-                                <span class="hover">Категории</span>
-                            </a>
-                        </li>
-                        <li>
-                            <a href="#">
-                                <span class="not-hover">Новости</span>
-                                <span class="hover">Новости</span>
-                            </a>
-                        </li>
-                        <li>
-                            <a href="#">
-                                <span class="not-hover">Помощь</span>
-                                <span class="hover">Помощь</span>
-                            </a>
-                        </li>
-                        <li>
-                            <a href="#">
-                                <span class="not-hover">О проекте</span>
-                                <span class="hover">О проекте</span>
-                            </a>
-                        </li>
-                    </ul>
-                </nav>
-                <form id="search" action="#" method="get">
-                    <fieldset>
-                        <div class="input-append">
-                            <input type="text" name="s" placeholder="ПОИСК" class="search-text" />
-                            <input type="submit" value="&nbsp;" class="btn search-submit" />
-                        </div>
-                    </fieldset>
-                </form>
-                <nav class="social">
-                    <ul class="clearfix">
-                        <li><a href="#" class="facebook-icon">&nbsp;</a></li>
-                        <li><a href="#" class="twitter-icon">&nbsp;</a></li>
-                        <li><a href="#" class="rss-icon">&nbsp;</a></li>
-                        <li><a href="#" class="vk-icon">&nbsp;</a></li>
-                        <li><a href="#" class="google-icon">&nbsp;</a></li>
-                    </ul>
-                </nav>
-            </div>
-        </header>
-        
-        <div class="content">
-            <div class="inner">
-                <article class="film">
-                    <div class="title clearfix">
-                        <h1>HOUSE M.D.</h1>
-                        <div class="ft-right">
-                            <div class="pp-rating">
-                                <span>1385 голосов</span>
-                                <div class="stars clearfix">
-                                    <ul class="clearfix">
-                                        <li class="star"></li>
-                                        <li class="star"></li>
-                                        <li></li>
-                                        <li></li>
-                                        <li></li>
-                                    </ul>
-                                    <span>(1.987 из 5)</span>
+        <div id="wrap">
+            <header>
+                <div class="inner clearfix">
+                    <select class="small-main-nav">
+                        <option value="#">Главная</option>
+                        <option value="#">Категории</option>
+                        <option selected="selected" value="#">Новости</option>
+                        <option value="#">Помощь</option>
+                        <option value="#">О проекте</option>
+                    </select>
+                    <nav class="main-nav">
+                        <ul class="clearfix">
+                            <li>
+                                <a href="#">
+                                    <span class="not-hover">Главная</span>
+                                    <span class="hover">Главная</span>
+                                </a>
+                            </li>
+                            <li>
+                                <a href="#">
+                                    <span class="not-hover">Категории</span>
+                                    <span class="hover">Категории</span>
+                                </a>
+                            </li>
+                            <li>
+                                <a href="#">
+                                    <span class="not-hover">Новости</span>
+                                    <span class="hover">Новости</span>
+                                </a>
+                            </li>
+                            <li>
+                                <a href="#">
+                                    <span class="not-hover">Помощь</span>
+                                    <span class="hover">Помощь</span>
+                                </a>
+                            </li>
+                            <li>
+                                <a href="#">
+                                    <span class="not-hover">О проекте</span>
+                                    <span class="hover">О проекте</span>
+                                </a>
+                            </li>
+                        </ul>
+                    </nav>
+                    <form id="search" action="#" method="get">
+                        <fieldset>
+                            <div class="input-append">
+                                <input type="text" name="s" placeholder="ПОИСК" class="search-text" />
+                                <input type="submit" value="&nbsp;" class="btn search-submit" />
+                            </div>
+                        </fieldset>
+                    </form>
+                    <nav class="social">
+                        <ul class="clearfix">
+                            <li><a href="#" class="facebook-icon">&nbsp;</a></li>
+                            <li><a href="#" class="twitter-icon">&nbsp;</a></li>
+                            <li><a href="#" class="rss-icon">&nbsp;</a></li>
+                            <li><a href="#" class="vk-icon">&nbsp;</a></li>
+                            <li><a href="#" class="google-icon">&nbsp;</a></li>
+                        </ul>
+                    </nav>
+                </div>
+            </header>
+
+            <div class="content">
+                <div class="inner">
+                    <article class="film">
+                        <div class="title clearfix">
+                            <h1>HOUSE M.D.</h1>
+                            <div class="ft-right">
+                                <div class="pp-rating">
+                                    <span>1385 голосов</span>
+                                    <div class="stars clearfix">
+                                        <ul class="clearfix">
+                                            <li class="star"></li>
+                                            <li class="star"></li>
+                                            <li></li>
+                                            <li></li>
+                                            <li></li>
+                                        </ul>
+                                        <span>(1.987 из 5)</span>
+                                    </div>
                                 </div>
                             </div>
                         </div>
-                    </div>
-                    <div class="main-content clearfix">
-                        <div class="content">
-                            <p>Доктор Хаус (в исполнении английского актёра Хью Лори, получившего за эту роль «Золотой Глобус» в 2006 и 2007 годах) — блестящий диагност со специализацией в двух основных областях: заболевания почек (нефрология) и инфекционные болезни, но из-за некоторых особенностей характера он не является любимцем пациентов и коллег: он замкнут, резок и циничен, склонен к бунтарству. Он не обременяет себя соблюдением правил хорошего тона, и временами кажется, что он полностью лишён чувства сострадания (что, однако, неверно). Лучше всего говорят о жизненной позиции Хауса слова  доктора Формана: «Он не нарушает правила, он их игнорирует», его любимое утверждение — «Все лгут». Как нистранно, именно этот подход нередко помогает ему разобраться в самых сложных и невероятных случаях, а значит, спасти жизнь ещё одному пациенту.</p>
-                            <ul class="likes clearfix">
-                                <li><img src="img/g+-like.png" alt="" /></li>
-                                <li><img src="img/vk-like.png" alt="" /></li>
-                                <li><img src="img/tweet-like.png" alt="" /></li>
-                            </ul>
+                        <div class="main-content clearfix">
+                            <div class="video-container">
+                                <img src="img/video-placeholder.jpg" class="vp" alt="" />
+                            </div>  
+                            <div class="content">
+                                <p>Доктор Хаус (в исполнении английского актёра Хью Лори, получившего за эту роль «Золотой Глобус» в 2006 и 2007 годах) — блестящий диагност со специализацией в двух основных областях: заболевания почек (нефрология) и инфекционные болезни, но из-за некоторых особенностей характера он не является любимцем пациентов и коллег: он замкнут, резок и циничен, склонен к бунтарству. Он не обременяет себя соблюдением правил хорошего тона, и временами кажется, что он полностью лишён чувства сострадания (что, однако, неверно). Лучше всего говорят о жизненной позиции Хауса слова  доктора Формана: «Он не нарушает правила, он их игнорирует», его любимое утверждение — «Все лгут». Как нистранно, именно этот подход нередко помогает ему разобраться в самых сложных и невероятных случаях, а значит, спасти жизнь ещё одному пациенту.</p>
+                                <ul class="likes clearfix">
+                                    <li><img src="img/g+-like.png" alt="" /></li>
+                                    <li><img src="img/vk-like.png" alt="" /></li>
+                                    <li><img src="img/tweet-like.png" alt="" /></li>
+                                </ul>
+                            </div>
                         </div>
-                        <div class="video-container">
-                            <img src="img/video-placeholder.jpg" class="vp" alt="" />
-                        </div>  
-                    </div>
-                </article>
+                        <div class="clearfix">
+                            <div class="comments">
+                                <ul class="comments-tabs-links">
+                                    <li><a href="#" class="active"><img src="img/comment-holy-tab.png" alt="" width="40" height="40" /></a></li>
+                                    <li><a href="#"><img src="img/comment-vk-tab.png" alt="" width="40" height="40" /></a></li>
+                                    <li><a href="#"><img src="img/comment-f-tab.png" alt="" width="40" height="40" /></a></li>
+                                </ul>
+                                <div class="comments-tabs">
+                                    <div class="ct-item active">
+                                        <form id="comment-add" action="#" method="post">
+                                            <fieldset>
+                                                <div class="ca-container">
+                                                    <div class="cai-container">
+                                                        <input type="text" name="comment-text" placeholder="Пишем комменты к фильму" />
+                                                    </div>
+                                                    <input type="submit" class="ca-submit" value="Добавить" />
+                                                </div>
+                                            </fieldset>
+                                        </form>
+                                        <div class="scroll-pane">
+                                            <ul class="comments-items">
+                                                <li>
+                                                    <img src="img/ex8.jpg" alt="" height="58" width="58" />
+                                                    <div class="ci-container">
+                                                        <span class="comment-arrow"></span>
+                                                        <p class="cic-author">Вася Пупкин 17:56 20.01.2013 </p>
+                                                        <p>Это невозможно описать словами! Сверх всяких похвал! Фраза "Все лгут!" стала нарицательой. Несмотря на обильное количество медицинских терминов, сериал смотрится легко и непринужденно. Хью Лори - лучший. Обычно меня хватает на 6, ну максимум, 7 серий в сериалах, а этот смотрю уже второй сезон, третий - впереди, а четвертого жду с нетерпением.</p>
+                                                    </div>
+                                                </li>
+                                                <li>
+                                                    <img src="img/ex8.jpg" alt="" height="58" width="58" />
+                                                    <div class="ci-container">
+                                                        <span class="comment-arrow"></span>
+                                                        <p class="cic-author">Вася Пупкин 17:56 20.01.2013 </p>
+                                                        <p>Это невозможно описать словами! Сверх всяких похвал! Фраза "Все лгут!" стала нарицательой. Несмотря на обильное количество медицинских терминов, сериал смотрится легко и непринужденно. Хью Лори - лучший. Обычно меня хватает на 6, ну максимум, 7 серий в сериалах, а этот смотрю уже второй сезон, третий - впереди, а четвертого жду с нетерпением.</p>
+                                                    </div>
+                                                </li>
+                                                <li>
+                                                    <img src="img/ex8.jpg" alt="" height="58" width="58" />
+                                                    <div class="ci-container">
+                                                        <span class="comment-arrow"></span>
+                                                        <p class="cic-author">Вася Пупкин 17:56 20.01.2013 </p>
+                                                        <p>Это невозможно описать словами! Сверх всяких похвал! Фраза "Все лгут!" стала нарицательой. Несмотря на обильное количество медицинских терминов, сериал смотрится легко и непринужденно. Хью Лори - лучший. Обычно меня хватает на 6, ну максимум, 7 серий в сериалах, а этот смотрю уже второй сезон, третий - впереди, а четвертого жду с нетерпением.</p>
+                                                    </div>
+                                                </li>
+                                                <li>
+                                                    <img src="img/ex8.jpg" alt="" height="58" width="58" />
+                                                    <div class="ci-container">
+                                                        <span class="comment-arrow"></span>
+                                                        <p class="cic-author">Вася Пупкин 17:56 20.01.2013 </p>
+                                                        <p>Это невозможно описать словами! Сверх всяких похвал! Фраза "Все лгут!" стала нарицательой. Несмотря на обильное количество медицинских терминов, сериал смотрится легко и непринужденно. Хью Лори - лучший. Обычно меня хватает на 6, ну максимум, 7 серий в сериалах, а этот смотрю уже второй сезон, третий - впереди, а четвертого жду с нетерпением.</p>
+                                                    </div>
+                                                </li>
+                                            </ul>
+                                        </div>
+                                    </div>
+                                    <div class="ct-item scroll-pane">&nbsp;</div>
+                                    <div class="ct-item scroll-pane">&nbsp;</div>
+                                </div>
+                            </div>
+                            <div class="seasons scroll-pane">
+                                <ul>
+                                    <li>
+                                        <a href="#" class="clearfix opener">
+                                            <span class="season-number">Сезон 1</span>
+                                            <span class="season-count-episodes">12 эпизодов</span>
+                                        </a>
+                                        <div class="s-series">
+                                            <ul class="clearfix center"><li>
+                                                    <a href="#"><span>1</span><img src="img/ex7.jpg" alt="" height="59" width="100" /></a>
+                                                </li><li>
+                                                    <a href="#"><span>2</span><img src="img/ex7.jpg" alt="" height="59" width="100" /></a>
+                                                </li><li>
+                                                    <a href="#"><span>3</span><img src="img/ex7.jpg" alt="" height="59" width="100" /></a>
+                                                </li><li>
+                                                    <a href="#"><span>4</span><img src="img/ex7.jpg" alt="" height="59" width="100" /></a>
+                                                </li><li>
+                                                    <a href="#"><span>5</span><img src="img/ex7.jpg" alt="" height="59" width="100" /></a>
+                                                </li><li>
+                                                    <a href="#"><span>6</span><img src="img/ex7.jpg" alt="" height="59" width="100" /></a>
+                                                </li><li>
+                                                    <a href="#"><span>7</span><img src="img/ex7.jpg" alt="" height="59" width="100" /></a>
+                                                </li><li>
+                                                    <a href="#"><span>8</span><img src="img/ex7.jpg" alt="" height="59" width="100" /></a>
+                                                </li><li>
+                                                    <a href="#"><span>9</span><img src="img/ex7.jpg" alt="" height="59" width="100" /></a>
+                                                </li><li>
+                                                    <a href="#"><span>10</span><img src="img/ex7.jpg" alt="" height="59" width="100" /></a>
+                                                </li><li>
+                                                    <a href="#"><span>11</span><img src="img/ex7.jpg" alt="" height="59" width="100" /></a>
+                                                </li><li>
+                                                    <a href="#"><span>12</span><img src="img/ex7.jpg" alt="" height="59" width="100" /></a>
+                                                </li></ul>
+                                        </div>
+                                    </li>
+                                    <li>
+                                        <a href="#" class="clearfix opener">
+                                            <span class="season-number">Сезон 2</span>
+                                            <span class="season-count-episodes">23 эпизодов</span>
+                                        </a>
+                                        <div class="s-series">
+                                            <ul class="clearfix center"><li>
+                                                    <a href="#"><span>1</span><img src="img/ex7.jpg" alt="" height="59" width="100" /></a>
+                                                </li><li>
+                                                    <a href="#"><span>2</span><img src="img/ex7.jpg" alt="" height="59" width="100" /></a>
+                                                </li><li>
+                                                    <a href="#"><span>3</span><img src="img/ex7.jpg" alt="" height="59" width="100" /></a>
+                                                </li><li>
+                                                    <a href="#"><span>4</span><img src="img/ex7.jpg" alt="" height="59" width="100" /></a>
+                                                </li><li>
+                                                    <a href="#"><span>5</span><img src="img/ex7.jpg" alt="" height="59" width="100" /></a>
+                                                </li><li>
+                                                    <a href="#"><span>6</span><img src="img/ex7.jpg" alt="" height="59" width="100" /></a>
+                                                </li><li>
+                                                    <a href="#"><span>7</span><img src="img/ex7.jpg" alt="" height="59" width="100" /></a>
+                                                </li><li>
+                                                    <a href="#"><span>8</span><img src="img/ex7.jpg" alt="" height="59" width="100" /></a>
+                                                </li><li>
+                                                    <a href="#"><span>9</span><img src="img/ex7.jpg" alt="" height="59" width="100" /></a>
+                                                </li><li>
+                                                    <a href="#"><span>10</span><img src="img/ex7.jpg" alt="" height="59" width="100" /></a>
+                                                </li><li>
+                                                    <a href="#"><span>11</span><img src="img/ex7.jpg" alt="" height="59" width="100" /></a>
+                                                </li><li>
+                                                    <a href="#"><span>12</span><img src="img/ex7.jpg" alt="" height="59" width="100" /></a>
+                                                </li><li>
+                                                    <a href="#"><span>13</span><img src="img/ex7.jpg" alt="" height="59" width="100" /></a>
+                                                </li><li>
+                                                    <a href="#"><span>14</span><img src="img/ex7.jpg" alt="" height="59" width="100" /></a>
+                                                </li><li>
+                                                    <a href="#"><span>15</span><img src="img/ex7.jpg" alt="" height="59" width="100" /></a>
+                                                </li><li>
+                                                    <a href="#"><span>16</span><img src="img/ex7.jpg" alt="" height="59" width="100" /></a>
+                                                </li><li>
+                                                    <a href="#"><span>17</span><img src="img/ex7.jpg" alt="" height="59" width="100" /></a>
+                                                </li><li>
+                                                    <a href="#"><span>18</span><img src="img/ex7.jpg" alt="" height="59" width="100" /></a>
+                                                </li><li>
+                                                    <a href="#"><span>19</span><img src="img/ex7.jpg" alt="" height="59" width="100" /></a>
+                                                </li><li>
+                                                    <a href="#"><span>20</span><img src="img/ex7.jpg" alt="" height="59" width="100" /></a>
+                                                </li><li>
+                                                    <a href="#"><span>21</span><img src="img/ex7.jpg" alt="" height="59" width="100" /></a>
+                                                </li><li>
+                                                    <a href="#"><span>22</span><img src="img/ex7.jpg" alt="" height="59" width="100" /></a>
+                                                </li><li>
+                                                    <a href="#"><span>23</span><img src="img/ex7.jpg" alt="" height="59" width="100" /></a>
+                                                </li></ul>
+                                        </div>
+                                    </li>
+                                    <li>
+                                        <a href="#" class="clearfix opener">
+                                            <span class="season-number">Сезон 3</span>
+                                            <span class="season-count-episodes">21 эпизодов</span>
+                                        </a>
+                                        <div class="s-series">
+                                            <ul class="clearfix center"><li>
+                                                    <a href="#"><span>1</span><img src="img/ex7.jpg" alt="" height="59" width="100" /></a>
+                                                </li><li>
+                                                    <a href="#"><span>2</span><img src="img/ex7.jpg" alt="" height="59" width="100" /></a>
+                                                </li><li>
+                                                    <a href="#"><span>3</span><img src="img/ex7.jpg" alt="" height="59" width="100" /></a>
+                                                </li><li>
+                                                    <a href="#"><span>4</span><img src="img/ex7.jpg" alt="" height="59" width="100" /></a>
+                                                </li><li>
+                                                    <a href="#"><span>5</span><img src="img/ex7.jpg" alt="" height="59" width="100" /></a>
+                                                </li><li>
+                                                    <a href="#"><span>6</span><img src="img/ex7.jpg" alt="" height="59" width="100" /></a>
+                                                </li><li>
+                                                    <a href="#"><span>7</span><img src="img/ex7.jpg" alt="" height="59" width="100" /></a>
+                                                </li><li>
+                                                    <a href="#"><span>8</span><img src="img/ex7.jpg" alt="" height="59" width="100" /></a>
+                                                </li><li>
+                                                    <a href="#"><span>9</span><img src="img/ex7.jpg" alt="" height="59" width="100" /></a>
+                                                </li><li>
+                                                    <a href="#"><span>10</span><img src="img/ex7.jpg" alt="" height="59" width="100" /></a>
+                                                </li><li>
+                                                    <a href="#"><span>11</span><img src="img/ex7.jpg" alt="" height="59" width="100" /></a>
+                                                </li><li>
+                                                    <a href="#"><span>12</span><img src="img/ex7.jpg" alt="" height="59" width="100" /></a>
+                                                </li><li>
+                                                    <a href="#"><span>13</span><img src="img/ex7.jpg" alt="" height="59" width="100" /></a>
+                                                </li><li>
+                                                    <a href="#"><span>14</span><img src="img/ex7.jpg" alt="" height="59" width="100" /></a>
+                                                </li><li>
+                                                    <a href="#"><span>15</span><img src="img/ex7.jpg" alt="" height="59" width="100" /></a>
+                                                </li><li>
+                                                    <a href="#"><span>16</span><img src="img/ex7.jpg" alt="" height="59" width="100" /></a>
+                                                </li><li>
+                                                    <a href="#"><span>17</span><img src="img/ex7.jpg" alt="" height="59" width="100" /></a>
+                                                </li><li>
+                                                    <a href="#"><span>18</span><img src="img/ex7.jpg" alt="" height="59" width="100" /></a>
+                                                </li><li>
+                                                    <a href="#"><span>19</span><img src="img/ex7.jpg" alt="" height="59" width="100" /></a>
+                                                </li><li>
+                                                    <a href="#"><span>20</span><img src="img/ex7.jpg" alt="" height="59" width="100" /></a>
+                                                </li><li>
+                                                    <a href="#"><span>21</span><img src="img/ex7.jpg" alt="" height="59" width="100" /></a>
+                                                </li></ul>
+                                        </div>
+                                    </li>
+                                    <li>
+                                        <a href="#" class="clearfix opener">
+                                            <span class="season-number">Сезон 4</span>
+                                            <span class="season-count-episodes">21 эпизодов</span>
+                                        </a>
+                                        <div class="s-series">
+                                            <ul class="clearfix center"><li>
+                                                    <a href="#"><span>1</span><img src="img/ex7.jpg" alt="" height="59" width="100" /></a>
+                                                </li><li>
+                                                    <a href="#"><span>2</span><img src="img/ex7.jpg" alt="" height="59" width="100" /></a>
+                                                </li><li>
+                                                    <a href="#"><span>3</span><img src="img/ex7.jpg" alt="" height="59" width="100" /></a>
+                                                </li><li>
+                                                    <a href="#"><span>4</span><img src="img/ex7.jpg" alt="" height="59" width="100" /></a>
+                                                </li><li>
+                                                    <a href="#"><span>5</span><img src="img/ex7.jpg" alt="" height="59" width="100" /></a>
+                                                </li><li>
+                                                    <a href="#"><span>6</span><img src="img/ex7.jpg" alt="" height="59" width="100" /></a>
+                                                </li><li>
+                                                    <a href="#"><span>7</span><img src="img/ex7.jpg" alt="" height="59" width="100" /></a>
+                                                </li><li>
+                                                    <a href="#"><span>8</span><img src="img/ex7.jpg" alt="" height="59" width="100" /></a>
+                                                </li><li>
+                                                    <a href="#"><span>9</span><img src="img/ex7.jpg" alt="" height="59" width="100" /></a>
+                                                </li><li>
+                                                    <a href="#"><span>10</span><img src="img/ex7.jpg" alt="" height="59" width="100" /></a>
+                                                </li><li>
+                                                    <a href="#"><span>11</span><img src="img/ex7.jpg" alt="" height="59" width="100" /></a>
+                                                </li><li>
+                                                    <a href="#"><span>12</span><img src="img/ex7.jpg" alt="" height="59" width="100" /></a>
+                                                </li><li>
+                                                    <a href="#"><span>13</span><img src="img/ex7.jpg" alt="" height="59" width="100" /></a>
+                                                </li><li>
+                                                    <a href="#"><span>14</span><img src="img/ex7.jpg" alt="" height="59" width="100" /></a>
+                                                </li><li>
+                                                    <a href="#"><span>15</span><img src="img/ex7.jpg" alt="" height="59" width="100" /></a>
+                                                </li><li>
+                                                    <a href="#"><span>16</span><img src="img/ex7.jpg" alt="" height="59" width="100" /></a>
+                                                </li><li>
+                                                    <a href="#"><span>17</span><img src="img/ex7.jpg" alt="" height="59" width="100" /></a>
+                                                </li><li>
+                                                    <a href="#"><span>18</span><img src="img/ex7.jpg" alt="" height="59" width="100" /></a>
+                                                </li><li>
+                                                    <a href="#"><span>19</span><img src="img/ex7.jpg" alt="" height="59" width="100" /></a>
+                                                </li><li>
+                                                    <a href="#"><span>20</span><img src="img/ex7.jpg" alt="" height="59" width="100" /></a>
+                                                </li><li>
+                                                    <a href="#"><span>21</span><img src="img/ex7.jpg" alt="" height="59" width="100" /></a>
+                                                </li></ul>
+                                        </div>
+                                    </li>
+                                </ul>
+                            </div>
+                        </div>
+                    </article>
+                </div>
             </div>
         </div>
         
@@ -160,7 +418,9 @@
         <!--script src="//ajax.googleapis.com/ajax/libs/jquery/1.9.0/jquery.min.js"></script-->
         <script>window.jQuery || document.write('<script src="js/vendor/jquery-1.9.0.min.js"><\/script>')</script>
         <script src="js/plugins.js"></script>
-        <script src="js/vendor/bootstrap.min.js"></script>
+        <script src="js/vendor/bootstrap.custom.js"></script>
+        <script src="js/jquery.mousewheel.js"></script>
+        <script src="js/jquery.jscrollpane.min.js"></script>
         <script src="js/main.js"></script>
 
         <!-- Google Analytics: change UA-XXXXX-X to be your site's ID. -->

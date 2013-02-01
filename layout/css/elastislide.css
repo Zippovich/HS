@@ -26,7 +26,7 @@
 }
 
 .elastislide-horizontal {
-    padding: 10px 0px;
+    
 }
 
 .elastislide-vertical {
@@ -36,6 +36,7 @@
 .elastislide-carousel {
     overflow: hidden;
     position: relative;
+    padding: 10px 0px;
 }
 
 .elastislide-carousel ul {
@@ -63,10 +64,14 @@
 
 .elastislide-horizontal ul li {
     display: inline-block;
-    margin: 0 3px 0 2px;
+    margin: 0 4px 0 5px;
     padding: 3px;
     border: 1px solid #e5e5e5;
-    background: #fff
+    background: #fff;
+    position: relative;
+}
+.elastislide-horizontal ul li:hover {
+    border-color: #aed7d0;
 }
 
 .elastislide-vertical ul li {
@@ -76,12 +81,11 @@
 .elastislide-carousel ul li a {
     display: inline-block;
     width: 100%;
-    position: relative
+    position: relative;
 }
 
 .elastislide-carousel ul li a img {
     display: block;
-    border: 2px solid white;
     max-width: 100%;
 }
 
@@ -104,6 +108,9 @@
     top: 50%;
     left: -32px;
     margin-top: -29px;
+    width: 31px;
+    height: 57px;
+    background: url('../img/slider-left.png') no-repeat
 }
 
 .elastislide-vertical nav span {
@@ -114,13 +121,12 @@
 }
 
 .elastislide-horizontal nav span.elastislide-next {
-    right: 10px;
+    right: -32px;
     left: auto;
-    background-position: 4px -17px;
+    background: url('../img/slider-right.png') no-repeat
 }
 
 .elastislide-vertical nav span.elastislide-next {
     bottom: 10px;
     top: auto;
-    background-position: -17px -18px;
 }

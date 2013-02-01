@@ -25,9 +25,36 @@ var chgDesc = function() {
     }
 }
 
+function calculateLIsInRow(selector) {
+    var lisInRow = 0;
+    $(selector).each(function() {
+        if($(this).prev().length > 0) {
+            if($(this).position().top != $(this).prev().position().top) return false;
+            lisInRow++;
+        }
+        else {
+            lisInRow++;   
+        }
+    });
+    return lisInRow;
+}
+
+function removeRightBorderNews() {
+    var selector = '.news > ul > li',
+        delimToRemove = calculateLIsInRow(selector);
+    $(selector).each(function(index, item) {
+        if ((index + 1)%delimToRemove) {
+            $(item).css('border-color', '#bebebe');
+        }
+        else {
+            $(item).css('border-color', 'transparent');
+        }
+    });
+}
+
 $(function() {
-    // Logo popover
-    var logoLinks = $('article.new ul li a');
+    // Popovers
+    var logoLinks = $('article.new ul li a, .top-views #carousel > li > a');
     if (logoLinks.length) {
         logoLinks.each(function() {
             $(this).hover(function() {
@@ -37,7 +64,8 @@ $(function() {
                     html: true,
                     trigger: 'hover',
                     placement: getPlacement($self),
-                    content: $self.find('.popover').html()
+                    content: $self.find('.popover').html(),
+                    container: 'body'
                 });
                 $self.popover('show');
             }, function() {
@@ -79,8 +107,10 @@ $(function() {
     
     $(window).resize(function() {
         chgDesc();
+        removeRightBorderNews();
     });
     chgDesc();
+    removeRightBorderNews();
     
     // Menu hover
     $('header nav.main-nav ul li a, footer nav.footer-nav ul li a').hover(function() {
@@ -108,5 +138,45 @@ $(function() {
     });
     
     // Home Slider
-    $('#carousel').elastislide();
+    var carousel = $('#carousel');
+    if (carousel.length)
+        carousel.elastislide();
+    $('.elastislide-horizontal ul li').hover(function() {
+       $(this).stop().animate({
+           top: '-10px'
+       }, 200); 
+    }, function() {
+        $(this).stop().animate({
+           top: 0
+       }, 200); 
+    });
+    
+    // Checkboxes
+    var pc = $('.pc');
+    if (pc.length) {
+        pc.prettyCheckable();
+    }
+    
+    /* Серии */
+    $('.seasons a.opener').on('click', function(e) {
+        e.preventDefault();
+        if (!$(this).parent().hasClass('opened')) {
+            $(this).next('.s-series').stop().slideDown(200);
+            $(this).parent().addClass('opened');
+        }
+        else {
+            $(this).next('.s-series').stop().slideUp(200);
+            $(this).parent().removeClass('opened');
+        }
+    });
+    
+    // Скроллер
+    var settings = {
+        autoReinitialise: true,
+        verticalGutter: 2
+    };
+    var pane = $('.scroll-pane')
+    pane.jScrollPane(settings);
+    
+    // 
 });
