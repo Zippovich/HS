@@ -54,7 +54,7 @@ function removeRightBorderNews() {
 
 $(function() {
     // Popovers
-    var logoLinks = $('article.new ul li a, .top-views #carousel > li > a');
+    var logoLinks = $('article.new ul li a, .top-views #carousel > li > a, .category-posts ul.center > li > a');
     if (logoLinks.length) {
         logoLinks.each(function() {
             $(this).hover(function() {
